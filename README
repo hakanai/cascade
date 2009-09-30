@@ -1,3 +1,7 @@
 
 Placeholder README so that Rails' isn't shown on GitHub.
 
+Getting started:
+  * Edit config/environment.rb and change SECRET_PASSWORD.
+    This will eventually be stored in the database but for now there is no point.
+  * Start the server.

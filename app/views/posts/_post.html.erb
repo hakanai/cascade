@@ -1,0 +1,16 @@
+<div class="post" id="<%= post.id %>">
+  <div class="permalink"><%= link_to '#', post_path(post), { :title => 'Permalink' } %></div>
+  <div class="body">
+    <%
+      plural = post.class.name.tableize
+      singular = plural.singularize
+    -%>
+    <%= render :partial => "#{plural}/#{singular}_body", :locals => { singular.to_sym => post } %>
+  </div>
+  
+  <% if logged_in? -%>
+    <div class="actions">
+      <%= link_to 'Edit', edit_path(post) %>
+    </div>
+  <% end -%>
+</div>

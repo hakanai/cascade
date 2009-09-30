@@ -1,0 +1,117 @@
+/* Application Stylesheet */
+
+* { /* padding/margin reset to give a more compatible baseline to work with */
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: Georgia, serif;
+  font-size: 120%;
+}
+
+body > h1, body > h2 {
+  padding: 1em 1em 0 1em;
+}
+h1 {
+  font-size: 140%;
+}
+h2 {
+  font-size: 120%;
+}
+
+p {
+  padding: 1em 0.5em 0 0.5em;
+}
+
+p:first-child {
+  padding-top: 0;
+}
+
+ul, ol, dl {
+  padding: 1em 0 0 2em;
+}
+
+div.entries {
+  position: relative;
+  display: table;
+  width: 100%;
+}
+div.entry {
+  position: relative;
+  display: table-row;
+  width: 100%;
+}
+
+div.permalink {
+  display: table-cell;
+  padding: 0.5em 0em 0.5em 0.5em;
+  color: rgb(40,40,40);
+}
+div.permalink :link, div.permalink :visited {
+  color: inherit;
+  text-decoration: none;
+}
+div.permalink :hover, div.permalink :active {
+  color: white;
+}
+
+div.meta {
+  display: table-cell;
+  text-align: right;
+  padding: 0.5em;
+  white-space: nowrap;
+  color: rgb(128,128,128);
+}
+
+span.author {
+  color: #0066CC;
+}
+
+span.topic {
+  color: #FF9900;
+}
+
+div.body {
+  display: table-cell;
+  padding: 0.5em;
+  border-left: 1px solid white;
+}
+div.entry:first-child div.body {
+  padding-top: 3em;
+}
+
+div.actions {
+  display: table-cell;
+  color: rgb(40,40,40);
+  padding: 0.5em;
+  text-align: right;
+}
+:link, :visited {
+  color: inherit;
+}
+
+body > div.actions {
+  display: block;
+  right: 0;
+}
+
+div.error, div.errorExplanation {
+  margin: 1em;
+  padding: 1em;
+  border: 0.5em solid red;
+}
+
+form {
+}
+
+fieldset {
+  padding: 1em;
+}
+
+div.form-actions {
+  padding: 1em;
+}
