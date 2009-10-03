@@ -2,8 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   # The priority is based upon order of creation: first created -> highest priority.
 
   map.root              :controller => 'posts',   :action => 'index'
-  map.resources :posts
-  map.resources :quips
+  map.new_post '/posts/new', :controller => 'posts', :action => 'new_index'
+  map.resources :posts, :path_names => { :new => 'new/:type' }
 
   map.login  '/login',  :controller => 'session', :action => 'login'
   map.logout '/logout', :controller => 'session', :action => 'logout'

@@ -1,0 +1,21 @@
+<%
+  if @post.video_site == 'youtube'
+    video_url = "http://www.youtube.com/v/#{video.video_id}"
+  elsif video.video_site == 'googlevideo'
+    video_url = "http://video.google.com/googleplayer.swf?docId=#{video.video_id}"
+  end
+
+  if video_url
+%>
+    <object width="425" height="350" type="application/x-shockwave-flash" data="<%= video_url %>"%>
+      <param name="movie" value="<%= video_url %>"/>
+      <param name="wmode" value="transparent"/>
+      <param name="FlashVars" value="playerMode=embedded"/>
+      <p class="error">
+        <strong>ERROR:</strong> If you can see this, then you might not have Flash installed.
+      </p>
+    </object>
+
+<% else %>
+  <p>(Unknown video site: #{video.video_site})</p>
+<% end %>

@@ -1,0 +1,17 @@
+<%#
+ % Partial for video form.
+ %
+ % locals:
+ %    f      - the form builder (object should be a Video)
+-%>
+
+  <p>
+    <%= f.label :video_site, 'Video Site: ' %>
+    <%= f.select :video_site, [ ['YouTube', 'youtube'], ['Google Video', 'googlevideo'] ] %>
+  </p>
+
+  <p>
+    <%= f.label :video_id, 'Video ID' %><br/>
+    <%= f.text_field :video_id %>
+  </p>
+

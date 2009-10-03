@@ -1,0 +1,25 @@
+<%#
+ % Partial for post form.
+ %
+ % locals:
+ %    post   - the Post.
+-%>
+
+<% form_for :post, post do |f| %>
+  <%= f.error_messages %>
+
+  <%=
+    lower_name = f.object.class.name.underscore
+    render :partial => "posts/types/#{lower_name}/edit", :locals => { :f => f }
+  %>
+
+  <div class="form-actions">
+    <p> <%=
+      str = f.object.new_record? ? 'Create ' : 'Update '
+      str += f.object.class.human_name
+      f.submit str
+    %></p>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,17 @@
+<%#
+ % Partial for link form.
+ %
+ % locals:
+ %    f      - the form builder (object should be a Link)
+-%>
+
+  <p>
+    <%= f.label :url, 'Link URL' %><br/>
+    <%= f.text_field :url %>
+  </p>
+
+  <p>
+    <%= f.label :title, 'Title' %><br/>
+    <%= f.text_field :title %>
+  </p>
+

@@ -1,3 +1,1 @@
-<ul>
-  <li><%= link_to 'New Quip', new_quip_path %></li>
-</ul>
+<%= render :partial => 'form', :locals => { :post => @post } %>

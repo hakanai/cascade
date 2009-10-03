@@ -1,16 +1,15 @@
 <div class="post" id="<%= post.id %>">
   <div class="permalink"><%= link_to '#', post_path(post), { :title => 'Permalink' } %></div>
-  <div class="body">
-    <%
-      plural = post.class.name.tableize
-      singular = plural.singularize
-    -%>
-    <%= render :partial => "#{plural}/#{singular}_body", :locals => { singular.to_sym => post } %>
+  <%
+    lower_name = post.class.name.underscore
+  -%>
+  <div class="body <%= lower_name %>">
+    <%= render :partial => "posts/types/#{lower_name}/show", :locals => { lower_name.to_sym => post } %>
   </div>
   
   <% if logged_in? -%>
     <div class="actions">
-      <%= link_to 'Edit', edit_path(post) %>
+      <%= link_to 'Edit', edit_post_path(post) %>
     </div>
   <% end -%>
 </div>
