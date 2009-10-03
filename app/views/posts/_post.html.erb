@@ -3,6 +3,9 @@
   <%
     lower_name = post.class.name.underscore
   -%>
+  <div class="meta">
+    <%= lower_name %>
+  </div>
   <div class="body <%= lower_name %>">
     <%= render :partial => "posts/types/#{lower_name}/show", :locals => { lower_name.to_sym => post } %>
   </div>
