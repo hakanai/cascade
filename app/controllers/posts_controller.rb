@@ -4,7 +4,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = params[:type].camelize.constantize.new
+    if params[:type]
+      @post = params[:type].camelize.constantize.new
+    else
+      render :action => 'new_index'
+    end
   end
 
   def create
